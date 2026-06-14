@@ -108,7 +108,7 @@ export default function CeoDashboard() {
       byMonth.set(m, (byMonth.get(m) || 0) + f.total);
     }
     if (byMonth.size >= 3) {
-      return [...byMonth.entries()]
+      return Array.from(byMonth.entries())
         .sort((a, b) => a[0] - b[0])
         .map(([m, monto]) => ({ mes: MONTH_LABELS[m], monto }));
     }

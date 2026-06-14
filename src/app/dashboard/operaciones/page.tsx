@@ -81,7 +81,7 @@ export default function OperacionesDashboard() {
       const d = p.departamento || "Sin asignar";
       byDept.set(d, (byDept.get(d) || 0) + 1);
     }
-    return [...byDept.entries()].map(([departamento, count]) => ({ departamento, count }));
+    return Array.from(byDept.entries()).map(([departamento, count]) => ({ departamento, count }));
   }, [personal]);
 
   return (
